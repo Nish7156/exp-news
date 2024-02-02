@@ -1,7 +1,7 @@
 // geolocation.js
 export const getUserLocation = () => {
   return new Promise((resolve, reject) => {
-    if ("geolocation" in navigator) {
+    if (typeof window !== "undefined" && "geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
         (pos) => {
           const { latitude, longitude } = pos.coords;
@@ -23,4 +23,19 @@ export const getUserLocation = () => {
       reject("Geolocation is not supported by your browser");
     }
   });
+};
+
+export const formatDate = (date: {
+  toLocaleDateString: (
+    arg0: string,
+    arg1: { weekday: string; month: string; day: string; year: string }
+  ) => any;
+}) => {
+  const options = {
+    weekday: "long",
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  };
+  return date.toLocaleDateString("en-US", options);
 };

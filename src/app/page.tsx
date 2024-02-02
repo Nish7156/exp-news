@@ -1,5 +1,3 @@
-import Image from "next/image";
-import styles from "./page.module.css";
 import LatestedBottomNews from "@/components/Home/LatestedBottomNews";
 import MoreNews from "@/components/Home/MoreNews";
 import NewsAdsBanners from "@/components/Home/NewsAdsBanners";
@@ -10,12 +8,12 @@ import NewsFeed from "@/components/Utility/NewsFeed";
 export default function Home() {
   return (
     <>
-         <NewsFeed />
-        <NewsAdsBanners />
-        <TopStoriesArea />
-        <VideoArea />
-        <MoreNews />
-        <LatestedBottomNews />
+      <NewsFeed />
+      <NewsAdsBanners />
+      <TopStoriesArea />
+      <VideoArea />
+      <MoreNews />
+      <LatestedBottomNews />
     </>
   );
 }

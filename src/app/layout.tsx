@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "bootstrap/dist/css/bootstrap.css"
+import "bootstrap/dist/css/bootstrap.css";
 import Layout from "@/components/Layout";
+import PhoneMenu from "@/components/Layout/PhoneMenu";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,12 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
+        <PhoneMenu />
         <div className="" id="wrapper">
-          <Layout>
-
-          {children}
-          </Layout>
+          <Layout>{children}</Layout>
         </div>
       </body>
     </html>

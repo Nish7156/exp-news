@@ -2,6 +2,7 @@ import React from "react";
 import CustomImage from "../elements/CustomImage";
 
 function NewsAdsBanners() {
+  const dummyAr = [1, 2, 3, 4];
   return (
     <>
       <section className="bg-body">
@@ -62,10 +63,10 @@ function NewsAdsBanners() {
                 </div>
               </div>
               <div className="img-scale-animate position-relative">
-                <img
-                  src="img/news/news131.jpg"
+                <CustomImage
+                  src={"/img/news/news131.jpg"}
+                  customClass="img-fluid width-100"
                   alt="news"
-                  className="img-fluid width-100"
                 />
                 <div className="mask-content-top-left">
                   <div className="topic-box-sm color-white mb-20">Gadgets</div>

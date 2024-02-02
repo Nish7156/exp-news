@@ -2511,7 +2511,7 @@ ul.item2-inline li:last-child {
   }
 }
 ul.news-info-list {
-  padding: 6px 0;
+  padding: 8px 0;
 }
 ul.news-info-list li {
   font-size: 13px;
@@ -2534,7 +2534,7 @@ ul.news-info-list li i {
 }
 ul.header-social {
   text-align: right;
-  padding: 4px 0;
+  padding: 2px 0;
 }
 ul.header-social li {
   display: inline-block;
@@ -4032,6 +4032,8 @@ div#wrapper.open > .offcanvas-mask {
   z-index: 99;
   background: 0 0;
   padding: 0;
+  background-color: #111;
+  
 }
 .mean-container .mean-bar:after {
   content: "";
@@ -6246,4 +6248,9 @@ ul.footer-social li a:hover {
   .size-c40 {
     font-size: 18px;
   }
+}
+
+
+.ol, ul, dl{
+  margin: 0px !important;
 }
