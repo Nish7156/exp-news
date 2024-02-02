@@ -1,6 +1,13 @@
+'use client'
+import SideMenus from "@/components/Layout/SideMenus";
 import React, { useEffect, useState } from "react";
 
-function MenuBar({ onSideMenuOpenClose }: any) {
+function MenuBar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const onSideMenuOpenClose = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   const handleScroll = () => {
     const stickerElement = document.getElementById("sticker");
     const headerLayout2 = document.getElementById("header-layout2");
@@ -206,6 +213,10 @@ function MenuBar({ onSideMenuOpenClose }: any) {
           </div>
         </div>
       </div>
+      <SideMenus
+        isMenuOpen={isMenuOpen}
+        onSideMenuOpenClose={onSideMenuOpenClose}
+      />
     </>
   );
 }

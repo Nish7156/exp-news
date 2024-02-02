@@ -3,16 +3,16 @@ import TopHeadingBarStrip from "../Utility/TopHeadingBarStrip";
 import LogoWithAds from "../Pages/LayoutComponents/LogoWithAds";
 import MenuBar from "../Pages/LayoutComponents/MenuBar";
 
-function Header({onSideMenuOpenClose}:any) {
+function Header() {
   return (
     <>
       <header>
         <div id="header-layout2" className="header-style3">
           <div className="header-top-bar">
             <TopHeadingBarStrip />
-           <LogoWithAds/>
-          </div> 
-          <MenuBar onSideMenuOpenClose={onSideMenuOpenClose}/>       
+            <LogoWithAds />
+          </div>
+          <MenuBar />
         </div>
       </header>
     </>

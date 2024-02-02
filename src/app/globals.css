@@ -2789,7 +2789,7 @@ ul.header-social li a {
 .offcanvas-menu-btn {
   position: relative;
   width: 12px;
-  margin-left: 15px;
+  margin-left: 100%;
 }
 .offcanvas-menu-btn a.menu-bar {
   height: 30px;

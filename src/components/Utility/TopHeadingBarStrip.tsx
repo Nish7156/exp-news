@@ -1,12 +1,17 @@
+"use client";
 import { getUserLocation } from "@/lib/helper";
 import React, { useEffect, useState } from "react";
 
 function TopHeadingBarStrip() {
   const [userLocation, setUserLocation] = useState<any>("");
   const currentDate = new Date();
-  const options:any = { weekday: 'long', month: 'short', day: 'numeric', year: 'numeric' };
-  const formattedDate = currentDate.toLocaleDateString('en-US', options);
-
+  const options: any = {
+    weekday: "long",
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  };
+  const formattedDate = currentDate.toLocaleDateString("en-US", options);
 
   useEffect(() => {
     getUserLocation()
