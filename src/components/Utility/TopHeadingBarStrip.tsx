@@ -15,7 +15,6 @@ function TopHeadingBarStrip() {
         console.error("Error getting user location:", error);
       });
   }, []);
-  console.log(userLocation, "userLocation");
 
   return (
     <>

@@ -1,9 +1,13 @@
-'use client'
+"use client";
 import SideMenus from "@/components/Layout/SideMenus";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 function MenuBar() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPathChange, setIsPathChange] = useState(false);
 
   const onSideMenuOpenClose = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -58,6 +62,32 @@ function MenuBar() {
     };
   }, []);
 
+  useEffect(() => {
+   
+  }, [isPathChange])
+  
+
+  const menuItems = [
+    { label: "Home", path: "/" },
+    { label: "Post", path: "/categories/post" },
+    {
+      label: "Pages",
+      path: "/#",
+      subMenu: [
+        "/author-post",
+        "/archive",
+        "/gallery-style-1",
+        "/gallery-style-2",
+        "/404",
+        "/contact",
+      ],
+    },
+    { label: "Politics", path: "/categories/Politics" },
+    { label: "Business", path: "/post-style-2" },
+    { label: "Sports", path: "/post-style-3" },
+    { label: "Fashion", path: "/post-style-4" },
+  ];
+
   return (
     <>
       <div className={`main-menu-area bg-body border-bottom `} id="sticker">
@@ -68,93 +98,28 @@ function MenuBar() {
                 <div className="ne-main-menu">
                   <nav id="dropdown">
                     <ul>
-                      <li className="active">
-                        <a href="#">Home</a>
-                        <ul className="ne-dropdown-menu">
-                          <li>
-                            <a href="index.html">Home 1</a>
-                          </li>
-                          <li>
-                            <a href="index2.html">Home 2</a>
-                          </li>
-                          <li className="active">
-                            <a href="index3.html">Home 3</a>
-                          </li>
-                          <li>
-                            <a href="index4.html">Home 4</a>
-                          </li>
-                          <li>
-                            <a href="index5.html">Home 5</a>
-                          </li>
-                          <li>
-                            <a href="index6.html">Home 6</a>
-                          </li>
-                          <li>
-                            <a href="index7.html">Home 7</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="#">Post</a>
-                        <ul className="ne-dropdown-menu">
-                          <li>
-                            <a href="post-style-1.html">Post Style 1</a>
-                          </li>
-                          <li>
-                            <a href="post-style-2.html">Post Style 2</a>
-                          </li>
-                          <li>
-                            <a href="post-style-3.html">Post Style 3</a>
-                          </li>
-                          <li>
-                            <a href="post-style-4.html">Post Style 4</a>
-                          </li>
-                          <li>
-                            <a href="single-news-1.html">News Details 1</a>
-                          </li>
-                          <li>
-                            <a href="single-news-2.html">News Details 2</a>
-                          </li>
-                          <li>
-                            <a href="single-news-3.html">News Details 3</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="#">Pages</a>
-                        <ul className="ne-dropdown-menu">
-                          <li>
-                            <a href="author-post.html">Author Post Page</a>
-                          </li>
-                          <li>
-                            <a href="archive.html">Archive Page</a>
-                          </li>
-                          <li>
-                            <a href="gallery-style-1.html">Gallery Style 1</a>
-                          </li>
-                          <li>
-                            <a href="gallery-style-2.html">Gallery Style 2</a>
-                          </li>
-                          <li>
-                            <a href="404.html">404 Error Page</a>
-                          </li>
-                          <li>
-                            <a href="contact.html">Contact Page</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="post-style-1.html">Politics</a>
-                      </li>
-                      <li>
-                        <a href="post-style-2.html">Business</a>
-                      </li>
-                      <li>
-                        <a href="post-style-3.html">Sports</a>
-                      </li>
-                      <li>
-                        <a href="post-style-4.html">Fashion</a>
-                      </li>
+                      {menuItems.map((menuItem, index) => (
+                        <li
+                          key={index}
+                          className={pathname === menuItem.path ? "active" : ""}
+                        >
+                          <Link style={{textDecoration:"none"}} href={menuItem.path}>{menuItem.label}</Link>
+                          {menuItem.subMenu && (
+                            <ul className="ne-dropdown-menu">
+                              {menuItem.subMenu.map((subMenuItem, subIndex) => (
+                                <li
+                                  key={subIndex}
+                                  className={
+                                    pathname === subMenuItem ? "active" : ""
+                                  }
+                                >
+                                  <a href={subMenuItem}>{subMenuItem}</a>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </li>
+                      ))}
                     </ul>
                   </nav>
                 </div>
