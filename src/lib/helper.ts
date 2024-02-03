@@ -39,3 +39,11 @@ export const formatDate = (date: {
   };
   return date.toLocaleDateString("en-US", options);
 };
+
+export function truncateString(str: string | any[], maxLength: number) {
+  if (str?.length <= maxLength) {
+    return str;
+  } else {
+    return `${str.slice(0, maxLength)}...`;
+  }
+}

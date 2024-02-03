@@ -2138,7 +2138,7 @@ ul.item2-inline li:last-child {
 .isotop-btn:after {
   display: none;
 }
-.isotop-btn a {
+.isotop-btn div {
   background: 0 0;
   color: #444;
   padding: 5px 8px;
@@ -2150,10 +2150,10 @@ ul.item2-inline li:last-child {
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
-.isotop-btn a:hover {
+.isotop-btn div:hover {
   color: #e53935;
 }
-.isotop-btn a:hover i {
+.isotop-btn div:hover i {
   color: #e53935;
   border: 1px solid #e53935;
 }
@@ -6254,3 +6254,5 @@ ul.footer-social li a:hover {
 .ol, ul, dl{
   margin: 0px !important;
 }
+
+
